@@ -4,49 +4,53 @@ const Home: NextPage = () => {
   return (
     <div
       className="
-       bg-slate-400 py-10 px-5 
-       flex flex-col space-y-5"
+       bg-slate-400 py-20 px-20 dark
+        grid gap-10 lg:grid-cols-2 xl:grid-cols-3"
     >
-      <div className="bg-white p-10 rounded-3xl shadow-2xl">
-        <span className="font-semibold text-3xl">Select Item</span>
-        <ul>
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className="flex justify-between my-2
-              odd:bg-blue-50 even:bg-yellow-50"
-            >
-              <span className="text-gray-500">Grey Chair</span>
-              <span className="font-semibold">$19</span>
-            </div>
-          ))}
-        </ul>
-        <ul>
-          {["a", "b", "c", ""].map((c, i) => (
-            <li
-              className="bg-red-500 py-2 empty:hidden"
-              key={i}
-            >
-              {c}
-            </li>
-          ))}
-        </ul>
+      {/*  First */}
+      <div
+        className=" dark:bg-black
+        p-10 rounded-3xl shadow-2xl content-center
+        "
+      >
+        <span className="font-semibold text-3xl dark:text-white">
+          Select Item
+        </span>
+
+        <div className="flex justify-between my-2">
+          <span className="text-gray-500 dark:text-gray-100">Grey Chair</span>
+          <span className="font-semibold dark:text-white">$19</span>
+        </div>
+        <div className="flex justify-between my-2">
+          <span className="text-[99px] text-[#FF34AB]">Grey Chair</span>
+          <span className="font-semibold dark:text-white">$19</span>
+        </div>
+
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
           <span>Total</span>
           <span className="font-semibold">$10</span>
         </div>
         <button
           className="mt-5 bg-blue-500 text-white p-3 
-          text-center rounded-xl w-1/2 mx-auto
-          hover:bg-teal-500 hover:text-black
+          text-center rounded-xl w-1/2 mx-auto flex justify-center
+          dark:hover:bg-white hover:bg-teal-500 hover:text-black 
           active:bg-yellow-500 focus:text-red-500
+          dark:border-white dark:border dark:bg-black
         "
         >
           Checkout
         </button>
       </div>
-      <div className="bg-white overflow-hidden rounded-2xl shadow-2xl">
-        <div className="bg-blue-500 p-6 pb-14">
+      {/*  Second */}
+      <div
+        className=" bg-white pb-14 xl:pb-40
+        first-letter:overflow-hidden rounded-2xl shadow-2xl group"
+      >
+        <div
+          className="bg-blue-500
+         landscape:bg-teal-500 portrait:bg-indigo-500 
+          p-6 pb-14 rounded-2xl"
+        >
           <span className="text-white text-2xl">Profile</span>
         </div>
         <div className="rounded-3xl p-6 relative -top-5 bg-white">
@@ -62,13 +66,18 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="relative -mt-16 -mb-5 flex flex-col items-center mt-5">
-            <span className="text-lg font-medium">Tony Molloy</span>
+            <span className="text-lg font-medium group-hover:bg-red-300">
+              Tony Molloy
+            </span>
             <span className="text-sm text-gray-500">미국</span>
           </div>
         </div>
       </div>
-
-      <div className="bg-white p-10 rounded-2xl shadow-2xl min-h-screen">
+      {/*  Third */}
+      <div
+        className="bg-white p-10 rounded-2xl shadow-2xl min-h-screen 
+        lg:col-span-2 xl:col-span-1"
+      >
         <div className="flex mb-5 justify-between items-center">
           <span>⬅️</span>
           <div className="space-x-3">
@@ -105,7 +114,6 @@ const Home: NextPage = () => {
               </button>
             </div>
           </div>
-
           <div className="flex justify-between items-center">
             <span className="font-medium text-2xl">$450</span>
             <button className="bg-blue-500 py-2 px-8 text-xs text-center text-white rounded-lg">
@@ -114,8 +122,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
-      <div className="bg-white p-10 rounded-2xl shadow-2xl"></div>
     </div>
   )
 }
